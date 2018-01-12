@@ -33,6 +33,8 @@ public class chatboxController {
 			memoChat.setText(memoChat.getText() + "\n" + msg);
 			txtMsg.clear();
 			txtMsg.requestFocus();
+			
+			Main.db.sendMsg("hungthuanmk", "Room #1", msg);
 		}
 		
 		

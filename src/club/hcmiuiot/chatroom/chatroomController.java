@@ -28,12 +28,12 @@ public class chatroomController {
 
 	@FXML
     private void onCreateNewRoom(ActionEvent event) {
-		db.loadRooms(lstRooms);
+		Main.db.loadRooms(lstRooms);
     }
 	
 	@FXML
 	private void initialize() {
-		db = new DB();
+		
 	}
 	
 	@FXML
@@ -63,6 +63,5 @@ public class chatroomController {
 		}
 	}
 
-	private DB db;
 	
 }

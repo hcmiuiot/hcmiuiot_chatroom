@@ -80,6 +80,19 @@ public class DB {
 		return null;
 	}
 	
+	public void sendMsg(String nickname, String roomName, String msg) {
+		try {
+			PreparedStatement pr = connection.prepareStatement("INSERT INTO Messages (nickname,msg,roomName) VALUES (?, ?, ?);");
+			pr.setString(1, nickname);;
+			pr.setString(2, msg);
+			pr.setString(3, roomName);
+			pr.executeUpdate();
+		} catch (SQLException e) {
+			log(e.getMessage());
+		}
+		
+	}
+	
 	public static void log(String msg) {
 		System.out.println(msg);
 	}
