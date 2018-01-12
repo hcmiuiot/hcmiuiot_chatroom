@@ -90,7 +90,16 @@ public class DB {
 		} catch (SQLException e) {
 			log(e.getMessage());
 		}
-		
+	}
+	
+	public void createNewRoom(String roomName) {
+		try {
+			PreparedStatement pr = connection.prepareStatement("INSERT INTO room (name) VALUES (?);");
+			pr.setString(1, roomName);;
+			pr.executeUpdate();
+		} catch (SQLException e) {
+			log(e.getMessage());
+		}
 	}
 	
 	public static void log(String msg) {

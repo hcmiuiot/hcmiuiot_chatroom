@@ -28,25 +28,32 @@ public class chatroomController {
 
 	@FXML
     private void onCreateNewRoom(ActionEvent event) {
-		Main.db.loadRooms(lstRooms);
-    }
-	
-	@FXML
-	private void initialize() {
-		
+		String newRoomName = txtNewRoom.getText();
+		if (! newRoomName.isEmpty())
+			Main.db.createNewRoom(newRoomName);
+		else {
+			Alert al = new Alert(AlertType.ERROR);
+			al.setContentText("Please enter new room name!");
+			al.show();
+		}
 	}
 	
 	@FXML
-    void onMouseClicked(MouseEvent  event) {
+	private void initialize() {
+		Main.db.loadRooms(lstRooms);		
+	}
+	
+	@FXML
+    void onMouseDbleClicked(MouseEvent  event) {
 		if (event.getClickCount() == 2 && event.getButton() == MouseButton.PRIMARY) {
-			if (txtName.getText() == "") {
+			if (txtName.getText().isEmpty()) {
 				Alert al = new Alert(AlertType.ERROR);
-				al.setContentText("Please type your nickname!");
+				al.setContentText("Please enter your nickname!");
+				al.show();
 			}
 			else {
 				int id = lstRooms.getSelectionModel().getSelectedIndex();
 				loginRoom(id, lstRooms.getItems().get(id));	
-				//DB.log(selectedRoomName +" -> #" + id);
 			}		
 		}
     }
