@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="394.0" prefWidth="568.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="club.hcmiuiot.chatroom.chatboxController">
+   <children>
+      <VBox prefHeight="394.0" prefWidth="568.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="471.0" prefWidth="568.0">
+               <children>
+                  <TextArea fx:id="memoChat" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="326.0" prefWidth="538.0" wrapText="true" />
+               </children>
+            </Pane>
+            <HBox prefHeight="0.0" prefWidth="568.0">
+               <children>
+                  <TextField fx:id="txtMsg" onAction="#onMsgKeyEntered" prefHeight="25.0" prefWidth="476.0">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button maxWidth="108.0" mnemonicParsing="false" onAction="#onSend" prefHeight="25.0" prefWidth="108.0" text="SEND">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
