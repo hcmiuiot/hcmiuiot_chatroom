@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="club.hcmiuiot.chatroom.chatroomController">
+   <children>
+      <SplitPane dividerPositions="0.3633440514469453" prefHeight="410.0" prefWidth="624.0">
+         <items>
+            <Pane maxHeight="408.0" maxWidth="732.0" prefHeight="408.0" prefWidth="223.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="34.0" text="Nickname" />
+                  <Label layoutX="14.0" layoutY="73.0" text="New room" />
+                  <TextField fx:id="txtName" layoutX="74.0" layoutY="30.0" prefHeight="25.0" prefWidth="130.0" />
+                  <TextField fx:id="txtNewRoom" layoutX="74.0" layoutY="69.0" prefHeight="25.0" prefWidth="130.0" />
+                  <Button layoutX="96.0" layoutY="101.0" mnemonicParsing="false" onAction="#onCreateNewRoom" text="Create new room" />
+                  <ListView fx:id="lstRooms" layoutX="16.0" layoutY="137.0" onMouseClicked="#onMouseDbleClicked" prefHeight="255.0" prefWidth="188.0" />
+               </children>
+            </Pane>
+            <TabPane fx:id="chatsTab" prefHeight="364.0" prefWidth="347.0" tabClosingPolicy="UNAVAILABLE">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </TabPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
