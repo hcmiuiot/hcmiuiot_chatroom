@@ -46,7 +46,7 @@ public class RoomListening implements Runnable {
 						}
 					}
 				} catch (SQLException e) {
-					e.printStackTrace();
+					DB.log(e.getMessage());
 				}
 			}
 					

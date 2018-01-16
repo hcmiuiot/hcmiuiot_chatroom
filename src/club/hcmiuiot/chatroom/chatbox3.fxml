@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="260.0" prefWidth="324.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="club.hcmiuiot.chatroom.chatboxController">
+   <children>
+      <TextArea fx:id="memoChat" editable="false" prefHeight="394.0" prefWidth="568.0" wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <font>
+            <Font name="Courier New" size="12.0" />
+         </font>
+       </TextArea>
+      <TextField fx:id="txtMsg" layoutX="15.0" layoutY="355.0" onAction="#onMsgKeyEntered" prefHeight="25.0" prefWidth="419.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="134.0" />
+      <Button layoutX="445.0" layoutY="355.0" maxWidth="108.0" mnemonicParsing="false" onAction="#onSend" prefHeight="25.0" prefWidth="108.0" text="SEND" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="15.0" />
+   </children>
+</AnchorPane>

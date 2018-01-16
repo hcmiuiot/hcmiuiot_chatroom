@@ -65,10 +65,12 @@ public class chatroomController {
 	
 	private void loginRoom(int roomId, String roomName) {
 		try {
-			AnchorPane newNode = FXMLLoader.load(getClass().getResource("chatbox.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("chatbox.fxml"));
+			AnchorPane newNode = (AnchorPane)loader.load();
+			chatboxController chatboxController = loader.getController();
+			chatboxController.setInfo(roomName, txtName.getText());
 			Tab newTab = new Tab(roomName, newNode);
 			newTab.setClosable(true);
-			//chatboxController controller = ((FXMLLoader) newNode).getController();
 			chatsTab.getTabs().add(newTab);
 		} catch (IOException e) {
 			DB.log(e.getMessage());
